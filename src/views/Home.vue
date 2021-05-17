@@ -1,4 +1,5 @@
 <template>
+  <router-link to="/about">Go to About</router-link>
   <div>home</div>
   <el-button @click="getUsers">请求</el-button>
 </template>
@@ -12,8 +13,14 @@ export default defineComponent({
     console.log('home')
 
     function getUsers() {
-      getUser('/abc', {data: 33, headers: {'X-Custom-Header': 'foobar'}}).then((res: any) => console.log(res)).catch((e: any) => console.log(e, 3333))
-      postUser('/abc', {b: 2}).then((res: any) => console.log(res)).catch((e: any) => console.log(e, 4444))
+      getUser('/PSSlnStudio/slnstudio/devcenter/psdevcenterdbinst/curslngrid/searchcursln', {
+        data: 33, headers: {'X-Custom-Header': 'foobar'}
+      })
+      .then((res: any) => console.log(res))
+      
+      postUser('/PSSlnStudio/slnstudio/devcenter/psdevcenterdbinst/curslngrid/searchcursln', {b: 2, headers: {'X-Custom-Header': 'foobar'}})
+      .then((res: any) => console.log(res))
+      // .catch((err) => console.log(err))
     }
 
     return { getUsers }

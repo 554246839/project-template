@@ -3,7 +3,7 @@
  */
 import HTTP from '../http'
 
-const http = new HTTP('ucc')
+const http = new HTTP('/ucc')
 
 export function getUser(url: string, params?: any) {
   return http.$get(url, params)

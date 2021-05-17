@@ -3,20 +3,23 @@
  */
 import * as VueRouter from 'vue-router'
 
-interface Route {
-  path: string;
-  component: () => Promise<typeof import("*.vue")>;
-}
+import { ErrorRoutes } from './error'
+import config from '../constant/config'
 
-const routes: Route[] = [
-  { path: '/', component: () => import('@/views/Home.vue') },
+const baseRoutes: VueRouter.RouteRecordRaw[] = [
+  { path: '', component: () => import('@/views/Home.vue') },
+  { path: '/', redirect: '' },
   { path: '/home', component: () => import('@/views/Home.vue') },
   { path: '/about', component: () => import('@/views/About.vue') },
 ]
 
 const router: VueRouter.Router = VueRouter.createRouter({
-  history: VueRouter.createWebHistory(),
-  routes
+  history: VueRouter.createWebHistory(config.routeBase),
+  
+  routes: [
+    ...baseRoutes,
+    ...ErrorRoutes
+  ]
 })
 
 export default router

@@ -10,10 +10,12 @@ const env = process.env.NODE_ENV || 'development'
 
 const config: Config = {
   development: {
-    baseUrl: 'http://development-url.com'
+    baseUrl: 'http://studio.ibizlab.cn',
+    routeBase: 'devRouter'
   },
   production: {
-    baseUrl: 'http://production-url.com'
+    baseUrl: 'http://production-url.com',
+    routeBase: 'proRouter'
   }
 }
 

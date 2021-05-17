@@ -1,6 +1,6 @@
 <template>
-  <div>About</div>
-  <router-link to="/home">Go to Home</router-link>
+  <div>500</div>
+  <router-link to="/">Go to Home</router-link>
 </template>
 
 <script lang="ts">
@@ -9,6 +9,6 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   setup() {
     
-  }
+  },
 })
 </script>
